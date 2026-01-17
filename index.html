@@ -16,7 +16,22 @@
     <button id = "logIn">Log in</button>
 </div>
 <div class="containerAdd">
-    <button id = "addNew">+ Add book</button>
+    <button id="openModal">+ Add book</button>
+
+<dialog id="modal">
+  <h2>Add new book</h2>
+  <form method="dialog">
+    <input placeholder="Title">
+    <input placeholder="Author">
+    <input placeholder="Pages">
+    <div class="checkbox-row">
+  <span>Have you read it?</span>
+  <input type="checkbox">
+  <button class ="submit">Submit</button>
+</div>
+<button id = "close">Close</button>
+  </form>
+</dialog>
 </div>
 <div class = "main">
 
