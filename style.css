@@ -22,12 +22,12 @@
 }
 #logIn{
     font-family: "Lexend Giga", sans-serif;
-    font-weight:bold;
     font-size:18px;
     height: 50px;
     width: 120px;
     border: none;
     border-radius: 5px;
+    background-color: rgb(254, 255, 240);
 }
 
 .containerAdd{
@@ -36,4 +36,29 @@
     align-items:center;
     height:80px;
     background-color:rgb(243, 243, 241);
+}
+#addNew{
+    font-family: "Lexend Giga", sans-serif;
+    font-size:20px;
+    font-weight: 800;
+    border: none;
+    background-color:rgb(243, 243, 241) ;
+}
+.footer{
+    background-color:rgb(243, 243, 241) ;
+    height:80px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family:"Lexend Giga", sans-serif;
+    margin-top:auto;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+    background-color: rgb(243, 243, 241);
+    flex:1;
 }
