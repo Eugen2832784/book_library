@@ -1,0 +1,13 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.header{
+    display:flex;
+    justify-content: space-around;
+    height:100px;
+    align-items: center;
+    background-color:rgb(250, 245, 233);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
