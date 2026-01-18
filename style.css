@@ -8,7 +8,7 @@
     justify-content: space-around;
     height:100px;
     align-items: center;
-    background-color:rgb(250, 245, 233);
+    background-color:rgb(140, 179, 118);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     position: relative;
     z-index: 10;
@@ -27,7 +27,7 @@
     width: 120px;
     border: none;
     border-radius: 5px;
-    background-color: rgb(254, 255, 240);
+    background-color:rgb(249, 249, 220);
 }
 
 .containerAdd{
@@ -101,4 +101,86 @@ h2{
     display:flex;
     flex-direction:column;
     gap:14px;
+}
+
+.cardContainer{
+    background-color: rgb(249, 249, 220);
+    border:none;
+    border-radius:5px;
+    width:280px;
+    height:250px;
+    padding:40px 10px;
+    box-shadow: 0 1px 15px rgba(0,0,0,0.3);
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:30px;
+}
+
+.main{
+    display:flex;
+    justify-content: flex-start;
+    row-gap:40px;
+    column-gap: 185px;
+    flex-wrap:wrap;
+    padding: 50px 100px 50px 100px;
+}
+
+p{
+    font-family: "Lexend Giga", sans-serif;
+    font-size: 18px ;
+} 
+.titleText{
+    font-weight: bold;
+    font-size: 20px ;
+    text-align: center;
+}
+
+.alreadyReadButton, .notReadButton, .removeButton{
+    font-family: "Lexend Giga", sans-serif;
+    font-size: 18px ;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    width: 180px;
+
+}
+.notReadButton{
+    background-color: rgb(246, 115, 115);
+}
+.alreadyReadButton{
+    background-color: rgb(124, 246, 115);
+}
+.removeButton{
+    background-color: rgb(203, 201, 201)
+}
+
+#modal{
+    background-color: rgb(140, 179, 118);
+    
+}
+
+input{
+    height: 30px;
+    font-size: 16px;
+    font-family:"Lexend Giga", sans-serif;
+}
+#submit{
+    background-color: rgb(124, 246, 115);
+    border:none;
+    padding:5px;
+    font-size: 16px;
+    font-family:"Lexend Giga", sans-serif;
+}
+#close{
+    background-color: rgb(246, 115, 115);
+    border:none;
+    padding:5px;
+    font-size: 16px;
+    font-family:"Lexend Giga", sans-serif;
+}
+.readInput {
+  transform: scale(1.5);
 }
