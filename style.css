@@ -79,5 +79,26 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 
-  
+  height: 350px;
+  width:300px;
+  border-radius: 10px;
+  border:none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  font-family: "Lexend Giga", sans-serif;
+  padding: 24px;
+}
+
+h2{
+    
+    font-size: 18px;
+    display:flex;
+    justify-content: center;
+    padding:10px 0px 10px 0px;
+
+}
+
+#modal form{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }

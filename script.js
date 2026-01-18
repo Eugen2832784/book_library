@@ -1,7 +1,9 @@
 const myLibrary = [];
-document.querySelector("#openModal").addEventListener("click", () => {
-  document.querySelector("#modal").showModal();
-});
+let openModal = document
+  .querySelector("#openModal")
+  .addEventListener("click", () => {
+    document.querySelector("#modal").showModal();
+  });
 
 function Book(title, author, pages, read) {
   if (!new.target) {
@@ -14,6 +16,12 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(title, author, pages, read) {
   // take params, create a book then store it in the array
+  const newBook = new Book(title, author, pages, read);
+  myLibrary.push(newBook);
+}
+addBookToLibrary("narnia", "Luis", "700", true);
+for (let book in myLibrary) {
+  console.log(book.title);
 }
