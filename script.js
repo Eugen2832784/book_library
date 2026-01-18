@@ -7,13 +7,28 @@ let openModal = document
   });
 let submit = document.querySelector("#submit");
 submit.addEventListener("click", () => {
-  const title = document.querySelector(".titleInput").value;
-  const author = document.querySelector(".authorInput").value;
-  const pages = document.querySelector(".pagesInput").value;
-  const read = document.querySelector(".readInput").checked;
-  if (title.trim() !== "" && author.trim() !== "" && pages.trim() !== "") {
-    addBookToLibrary(title, author, pages, read);
+  const title = document.querySelector(".titleInput");
+  const author = document.querySelector(".authorInput");
+  const pages = document.querySelector(".pagesInput");
+  const read = document.querySelector(".readInput");
+  if (
+    title.value.trim() !== "" &&
+    author.value.trim() !== "" &&
+    pages.value.trim() !== ""
+  ) {
+    addBookToLibrary(title.value, author.value, pages.value, read.checked);
   }
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  read.checked = false;
+});
+const closeBtn = document.querySelector("#close");
+closeBtn.addEventListener("click", () => {
+  document.querySelector(".titleInput").value = "";
+  document.querySelector(".authorInput").value = "";
+  document.querySelector(".pagesInput").value = "";
+  document.querySelector(".readInput").checked = false;
 });
 function Book(title, author, pages, read) {
   if (!new.target) {
@@ -33,7 +48,7 @@ function addBookToLibrary(title, author, pages, read) {
   cardContainer.classList.add("cardContainer");
   const titleText = document.createElement("p");
   titleText.classList.add("titleText");
-  titleText.textContent = newBook.title;
+  titleText.textContent = '"' + newBook.title + '"';
   const authorText = document.createElement("p");
   authorText.classList.add("authorText");
   authorText.textContent = newBook.author;
