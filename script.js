@@ -1,10 +1,20 @@
 const myLibrary = [];
+const mainCont = document.querySelector(".main");
 let openModal = document
   .querySelector("#openModal")
   .addEventListener("click", () => {
     document.querySelector("#modal").showModal();
   });
-
+let submit = document.querySelector("#submit");
+submit.addEventListener("click", () => {
+  const title = document.querySelector(".titleInput").value;
+  const author = document.querySelector(".authorInput").value;
+  const pages = document.querySelector(".pagesInput").value;
+  const read = document.querySelector(".readInput").checked;
+  if (title.trim() !== "" && author.trim() !== "" && pages.trim() !== "") {
+    addBookToLibrary(title, author, pages, read);
+  }
+});
 function Book(title, author, pages, read) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
@@ -17,11 +27,51 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(title, author, pages, read) {
-  // take params, create a book then store it in the array
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
-}
-addBookToLibrary("narnia", "Luis", "700", true);
-for (let book in myLibrary) {
-  console.log(book.title);
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("cardContainer");
+  const titleText = document.createElement("p");
+  titleText.classList.add("titleText");
+  titleText.textContent = newBook.title;
+  const authorText = document.createElement("p");
+  authorText.classList.add("authorText");
+  authorText.textContent = newBook.author;
+  const pagesText = document.createElement("p");
+  pagesText.classList.add("pagesText");
+  pagesText.textContent = newBook.pages + " pages";
+  const readButton = document.createElement("button");
+  const removeButton = document.createElement("button");
+  removeButton.classList.add("removeButton");
+  removeButton.textContent = "Remove";
+  if (newBook.read) {
+    readButton.textContent = "Read";
+    readButton.classList.add("alreadyReadButton");
+  } else {
+    readButton.textContent = "Not Read";
+    readButton.classList.add("notReadButton");
+  }
+
+  readButton.addEventListener("click", () => {
+    newBook.read = !newBook.read;
+
+    if (newBook.read) {
+      readButton.textContent = "Read";
+      readButton.classList.replace("notReadButton", "alreadyReadButton");
+    } else {
+      readButton.textContent = "Not Read";
+      readButton.classList.replace("alreadyReadButton", "notReadButton");
+    }
+  });
+  cardContainer.append(
+    titleText,
+    authorText,
+    pagesText,
+    readButton,
+    removeButton,
+  );
+  mainCont.append(cardContainer);
+  removeButton.addEventListener("click", () => {
+    cardContainer.remove();
+  });
 }
